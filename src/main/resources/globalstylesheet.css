@@ -1,0 +1,12 @@
+html {
+    background-color: black;
+    color: white;
+}
+@font-face{
+    font-family: PokeTitleFont;
+    src: url(pokemon_solid.ttf);
+}
+@font-face{
+    font-family: PokeBWFont;
+    src: url(pokemon_bw_title.ttf);
+}
