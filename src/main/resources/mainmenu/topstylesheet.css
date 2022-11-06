@@ -1,4 +1,12 @@
-div {
+@keyframes slide{
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-512px, 0, 0);
+    }
+}
+.title {
     margin: auto;
     position: absolute;
     top: 40%;
@@ -6,7 +14,7 @@ div {
     transform: translate(-50%, -50%);
     white-space: nowrap;
 }
-img {
+#title-logo{
     width: 300px;
 }
 #subtitle {
@@ -15,6 +23,15 @@ img {
     font-family: PokeBWFont;
     -webkit-text-stroke: 2px #ffffff;
     -webkit-text-fill-color: #000000;
+}
+#slide-effect {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url("top-scroll-effect.png") repeat-x;
+    height: 200px;
+    width: 1536px;
+    animation: slide 60s linear infinite;
 }
 
 

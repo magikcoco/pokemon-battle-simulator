@@ -1,0 +1,18 @@
+.option {
+    position:absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    white-space: nowrap;
+    font-size: 22px;
+    font-family: PokeGameFont;
+    text-shadow: 0px 9px 3px #CDCDCD80;
+    z-index: 1;
+}
+#static-effect {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 280px;
+    z-index: 0;
+}

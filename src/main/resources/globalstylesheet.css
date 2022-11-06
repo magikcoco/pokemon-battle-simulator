@@ -1,6 +1,8 @@
 html {
     background-color: black;
     color: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 @font-face{
     font-family: PokeTitleFont;
@@ -9,4 +11,8 @@ html {
 @font-face{
     font-family: PokeBWFont;
     src: url(pokemon_bw_title.ttf);
+}
+@font-face{
+    font-family: PokeGameFont;
+    src: url(pokemon_bw_game.ttf);
 }
