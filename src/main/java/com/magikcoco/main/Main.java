@@ -44,7 +44,9 @@ public class Main extends Application {
         scene.setOnKeyPressed(e -> {
             if(e.getCode() == ENTER){
                 if(bottomEngine.getTitle().equals("mainmenubottom")){
-                    System.out.println("Enter Pressed");
+                    //when on main menu, switch to the game menu
+                    topEngine.load(getClass().getResource("/gamemenu/gamemenutop.html").toString());
+                    bottomEngine.load(getClass().getResource("/gamemenu/rootmenubottom.html").toString());
                 }
             }
         });
