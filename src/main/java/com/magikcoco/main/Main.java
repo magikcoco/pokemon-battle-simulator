@@ -19,7 +19,7 @@ public class Main extends Application {
         VBox root = new VBox();
 
         //set the size of the whole application
-        double height = 400.0; //the resolution of a 3DS top and bottom screen together
+        double height = 720.0; //the resolution of two screen stacked on top of each other
         double width = 480.0;
 
         //the webview that sits on top
@@ -39,14 +39,14 @@ public class Main extends Application {
         root.getChildren().add(bottomView);
 
         //create the scene and add listener
-        Scene scene = new Scene(root, height, width);
+        Scene scene = new Scene(root, width, height);
         //key bindings for events
         scene.setOnKeyPressed(e -> {
             if(e.getCode() == ENTER){
                 if(bottomEngine.getTitle().equals("mainmenubottom")){
                     //when on main menu, switch to the game menu
                     topEngine.load(getClass().getResource("/gamemenu/gamemenutop.html").toString());
-                    bottomEngine.load(getClass().getResource("/gamemenu/rootmenubottom.html").toString());
+                    bottomEngine.load(getClass().getResource("/gamemenu/gamemenubottom.html").toString());
                 }
             }
         });

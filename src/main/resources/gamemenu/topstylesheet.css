@@ -1,0 +1,47 @@
+.background{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+.button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+.button img:last-child{
+    visibility: hidden;
+}
+.button:hover img:last-child{
+    visibility: visible;
+}
+.button:hover img:first-child{
+    visibility: hidden;
+}
+.buttontext{
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    font-size: 22px;
+    font-family: PokeGameFont;
+    z-index: 3;
+}
+.highlight{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+#gamebutton{
+    transform: translate(-70%, -350%);
+}
+#teambuilderbutton{
+    transform: translate(-70%, -230%);
+}
+#settingsbutton{
+    transform: translate(-70%, -110%);
+}
+#exitbutton{
+    transform: translate(-70%, 10%);
+}
