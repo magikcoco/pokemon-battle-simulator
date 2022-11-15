@@ -3,6 +3,8 @@ html {
     color: white;
     overflow-x: hidden;
     overflow-y: hidden;
+    cursor: default;
+    user-select: none;
 }
 @font-face{
     font-family: PokeTitleFont;

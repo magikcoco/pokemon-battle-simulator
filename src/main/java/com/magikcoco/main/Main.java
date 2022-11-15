@@ -1,5 +1,6 @@
 package com.magikcoco.main;
 
+import com.sun.webkit.dom.HTMLDocumentImpl;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -8,6 +9,10 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import static javafx.scene.input.KeyCode.ENTER;
+import org.w3c.dom.events.MouseEvent;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main extends Application {
 
@@ -27,6 +32,31 @@ public class Main extends Application {
         topView.prefHeight(height/2); //half height since there are two of these
         topView.prefWidth(width);
         WebEngine topEngine = topView.getEngine();
+        topEngine.documentProperty().addListener((observable, oldDocument, newDocument)->{
+            if(newDocument != null) {
+                System.out.println(newDocument);
+                HTMLDocumentImpl htmldoc = (HTMLDocumentImpl) newDocument;
+                htmldoc.setOnmouseup(e -> {
+                    MouseEvent mouseEvent = (MouseEvent) e;
+                    try {
+                        switch (htmldoc.elementFromPoint(mouseEvent.getClientX(), mouseEvent.getClientY()).getAttribute("id")) {
+                            case "game-button-img", "game-button-text", "game-button-highlight-img"
+                                    -> System.out.println("Game button pressed");
+                            case "teambuilder-button-img", "teambuilder-button-text", "teambuilder-button-highlight-img"
+                                    -> System.out.println("Teambuilder button pressed");
+                            case "settings-button-img", "settings-button-text", "settings-button-highlight-img"
+                                    -> System.out.println("Settings button pressed");
+                            case "exit-button-img", "exit-button-text", "exit-button-highlight-img"
+                                    -> System.out.println("Exit button pressed");
+                        }
+                    }catch(NullPointerException nullpointer){
+                        Logger logger = Logger.getLogger(this.getClass().getName());
+                        logger.setLevel(Level.WARNING);
+                        logger.warning("Clicked item has no id attribute");
+                    }
+                });
+            }
+        });
         topEngine.load(getClass().getResource("/mainmenu/mainmenutop.html").toString());
         root.getChildren().add(topView);
 
