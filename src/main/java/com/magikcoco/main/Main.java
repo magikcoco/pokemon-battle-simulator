@@ -138,6 +138,7 @@ public class Main extends Application {
 
     private void gameMenuExitButton(){
         //exit button in gamemenutop.html
-        System.out.println("Exit button pressed");
+        Platform.exit();
+        System.exit(0);
     }
 }
