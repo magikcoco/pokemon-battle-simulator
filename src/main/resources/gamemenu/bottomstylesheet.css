@@ -1,3 +1,9 @@
+#menuitemsholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
 #background{
     position: absolute;
     top: 0px;

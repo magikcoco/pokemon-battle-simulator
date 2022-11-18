@@ -123,17 +123,20 @@ public class Main extends Application {
 
     private void gameMenuGameButton(){
         //game button in gamemenutop.html
-        System.out.println("Game button pressed");
+        WebView bottom = (WebView) root.getChildren().get(1);
+        bottom.getEngine().load(getClass().getResource("/gamemenu/startgamemenubottom.html").toString());
     }
 
     private void gameMenuTBButton(){
         //teambuilder button in gamemenutop.html
-        System.out.println("Teambuilder button pressed");
+        WebView bottom = (WebView) root.getChildren().get(1);
+        bottom.getEngine().load(getClass().getResource("/gamemenu/teambuildermenubottom.html").toString());
     }
 
     private void gameMenuSettingsButton(){
         //settings button in gamemenutop.html
-        System.out.println("Settings button pressed");
+        WebView bottom = (WebView) root.getChildren().get(1);
+        bottom.getEngine().load(getClass().getResource("/gamemenu/settingsmenubottom.html").toString());
     }
 
     private void gameMenuExitButton(){
