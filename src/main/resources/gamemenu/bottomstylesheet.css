@@ -1,7 +1,6 @@
 .tbselector{
     position: relative;
     height: 32px;
-    border: 1px solid red;
 }
 .tbselector:hover{
     color: #000000;
