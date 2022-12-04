@@ -89,7 +89,7 @@ public class Main extends Application {
                     } else if (webEngine.getTitle().equals("gamemenutop") || webEngine.getTitle().equals("gamemenubottom")){
                         //buttons from gamemenutop.html
                         gameMenuButtonHandler(htmldoc, mouseEvent);
-                    }
+                    } //TODO: handler for clicking different pokemon in the teambuilder
                 });
             }
         });
